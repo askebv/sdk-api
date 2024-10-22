@@ -131,6 +131,28 @@ The <b>DataPtr</b> member points to an <a href="/windows/win32/api/evntcons/ns-e
 </td>
 </tr>
 <tr>
+<td width="40%"><a id="EVENT_HEADER_EXT_TYPE_PMC_COUNTERS"></a><a id="event_header_ext_type_pmc_counters"></a><dl>
+<dt><b>EVENT_HEADER_EXT_TYPE_PMC_COUNTERS</b></dt>
+</dl>
+</td>
+<td width="60%">
+The <b>DataPtr</b> member points to an <a href="/windows/win32/api/evntcons/ns-evntcons-event_extended_item_pmc_counters">EVENT_EXTENDED_ITEM_PMC_COUNTERS</a> structure that contains the current PMC Counter values. To enable this feature, the valid PMC counters for the CPU must be set via <a href="/windows/win32/api/evntrace/nf-evntrace-tracesetinformation">TraceSetInformation</a>, with valid <b>Source</b> values found by calling <a href="/windows/win32/api/evntrace/nf-evntrace-tracequeryinformation">TraceQueryInformation</a> with <a href="/windows/win32/api/evntrace/ne-evntrace-trace_query_info_class">TraceProfileSourceListInfo</a>.
+
+</td>
+</tr>
+<tr>
+<td width="40%"><a id="EVENT_HEADER_EXT_TYPE_EVENT_KEY"></a><a id="event_header_ext_type_event_key"></a><dl>
+<dt><b>EVENT_HEADER_EXT_TYPE_EVENT_KEY</b></dt>
+</dl>
+</td>
+<td width="60%">
+The <b>DataPtr</b> member points to an EVENT_EXTENDED_ITEM_EVENT_KEY structure containing a unique event identifier that is a 64-bit scalar.
+
+The <b>EnableProperty</b> EVENT_ENABLE_PROPERTY_EVENT_KEY needs to be passed in for the <a href="/windows/desktop/ETW/enabletrace">EnableTrace</a> call for a given provider to enable this feature.
+
+</td>
+</tr>
+<tr>
 <td width="40%"><a id="EVENT_HEADER_EXT_TYPE_EVENT_SCHEMA_TL"></a><a id="event_header_ext_type_event_schema_tl"></a><dl>
 <dt><b>EVENT_HEADER_EXT_TYPE_EVENT_SCHEMA_TL</b></dt>
 </dl>
@@ -147,18 +169,6 @@ The <b>DataPtr</b> member points to an extended header item that contains TraceL
 </td>
 <td width="60%">
 The <b>DataPtr</b> member points to an extended header item that  contains provider traits data, for example traits set through <a href="/windows/desktop/api/evntprov/nf-evntprov-eventsetinformation">EventSetInformation(EventProviderSetTraits)</a> or specified through <a href="/windows/desktop/api/evntprov/ns-evntprov-event_data_descriptor">EVENT_DATA_DESCRIPTOR_TYPE_PROVIDER_METADATA</a>.
-
-</td>
-</tr>
-<tr>
-<td width="40%"><a id="EVENT_HEADER_EXT_TYPE_EVENT_KEY"></a><a id="event_header_ext_type_event_key"></a><dl>
-<dt><b>EVENT_HEADER_EXT_TYPE_EVENT_KEY</b></dt>
-</dl>
-</td>
-<td width="60%">
-The <b>DataPtr</b> member points to an EVENT_EXTENDED_ITEM_EVENT_KEY structure containing a unique event identifier that is a 64-bit scalar.
-
-The <b>EnableProperty</b> EVENT_ENABLE_PROPERTY_EVENT_KEY needs to be passed in for the <a href="/windows/desktop/ETW/enabletrace">EnableTrace</a> call for a given provider to enable this feature.
 
 </td>
 </tr>
